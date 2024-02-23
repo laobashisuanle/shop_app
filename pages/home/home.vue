@@ -148,4 +148,5 @@
 		display: flex;
 		padding-left: 15rpx;
 	}
+
 </style>
