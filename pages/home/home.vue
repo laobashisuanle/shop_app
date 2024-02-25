@@ -92,9 +92,10 @@
 				} = await uni.$http.get('/api/public/v1/home/floordata')
 				if (res.meta.status != 200) return uni.$showMsg()
                 //处理数据
+				console.log(res)
 				res.message.forEach(floor=>{
 					floor.product_list.forEach(prod=>{
-						prod.url='/subpkg/goods_list/goods_list?'+prod.navigator_url
+						prod.url='/subpkg/goods_list/goods_list?'+prod.navigator_url.split('?')[1]
 					})
 				})
 				this.floorList = res.message
